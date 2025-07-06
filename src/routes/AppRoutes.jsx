@@ -11,7 +11,7 @@ import AboutApp from '../pages/AboutApp'
 import AboutDev from '../pages/AboutDev'
 import Page404 from '../pages/Page404'
 
-const AppRoutes = () => {
+export const AppRoutes = () => {
 	return (
 		<Routes>
 			{/* Main Layout */}
