@@ -8,10 +8,6 @@ const Meeting = () => {
 	function goToTeachersList() {
 		navigate(frontRoutes.navigate.teachers.index)
 	}
-	console.log(
-		' goToTeachersList ~ frontRoutes.navigate.teachers:',
-		frontRoutes.navigate.teachers.index,
-	)
 	const numbersOfTeachers = state?.teachers.length
 
 	let content

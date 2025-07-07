@@ -67,7 +67,12 @@ const TeachersList = () => {
 				</div>
 			</div>
 		)
-	else if (error) content = <h2>{error.message}</h2>
+	else if (error)
+		content = (
+			<div className="flex items-center justify-center h-[30vh]">
+				<h2 className="text-2xl text-red-600">{error.message}</h2>
+			</div>
+		)
 	else
 		content = teachersList.map((teacher) => (
 			<TeacherCard
@@ -78,6 +83,7 @@ const TeachersList = () => {
 				isSelected={selectedTeachersId.includes(teacher.id)}
 			/>
 		))
+
 	return (
 		<div className="container">
 			<Modal visible={modal} setVisible={setModal}>
@@ -97,7 +103,7 @@ const TeachersList = () => {
 				<h1 className="my-10 text-4xl font-bold text-green-700 md:text-6xl">
 					Список вчителів
 				</h1>
-				{!isLoading && (
+				{!isLoading && !error && (
 					<div className="grid gap-2 mb-4 md:grid-cols-2 justify-items-center">
 						<button className="w-full md:w-max button" onClick={addTeacher}>
 							Додати нового вчителя
@@ -117,7 +123,7 @@ const TeachersList = () => {
 					</div>
 				)}
 				<div className="flex flex-col gap-6 ">{content}</div>
-				{!isLoading && (
+				{!isLoading && !error && (
 					<div className="mt-2 mb-4">
 						<button
 							disabled={!selectedTeachersId.length}

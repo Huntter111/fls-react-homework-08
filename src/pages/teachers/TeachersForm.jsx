@@ -94,7 +94,11 @@ const TeachersForm = () => {
 							{getButtonLabel()}
 						</button>
 
-						<button className="button button--cancel" onClick={cancelChanges}>
+						<button
+							className="button button--cancel"
+							onClick={cancelChanges}
+							disabled={isSubmitting}
+						>
 							Скасувати
 						</button>
 					</div>

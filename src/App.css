@@ -27,6 +27,9 @@ body {
 .button:active {
 	transform: scale(0.97);
 }
+button:disabled:active {
+	transform: scale(1);
+}
 .button:hover {
 	background-color: #0c7a16;
 }
