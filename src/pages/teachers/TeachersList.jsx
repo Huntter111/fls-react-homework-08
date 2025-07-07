@@ -118,7 +118,12 @@ const TeachersList = () => {
 								збори
 							</button>
 						) : (
-							<div className="min-w-[200px] min-h-[44px]"></div>
+							<button
+								className="w-full md:w-max button button--blue"
+								onClick={goToMeeting}
+							>
+								Немає викликаних вчителів на збори
+							</button>
 						)}
 					</div>
 				)}
